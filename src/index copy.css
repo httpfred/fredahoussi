@@ -260,22 +260,3 @@ body.light .bg-grid-pattern {
   animation: gradient 3s ease infinite;
   background-size: 200% auto;
 }
-
-
-/* Grid pattern personnalisé */
-.custom-grid {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  background-image: repeating-linear-gradient(0deg, #ffffff20 0px, #ffffff20 1px, transparent 1px, transparent 48px),
-    repeating-linear-gradient(90deg, #ffffff20 0px, #ffffff20 1px, transparent 1px, transparent 48px);
-}
-
-.light .custom-grid {
-  background-image: repeating-linear-gradient(0deg, #00000020 0px, #00000020 1px, transparent 1px, transparent 48px),
-    repeating-linear-gradient(90deg, #00000020 0px, #00000020 1px, transparent 1px, transparent 48px);
-}

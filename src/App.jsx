@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { skills, workExperiences, scrollWords, portfolioItems } from './utils/constants';
+import { skills, workExperiences, scrollWords, portfolioItems, socials } from './utils/constants';
 
 // Composant Typewriter pour effet machine à écrire
 const TypewriterText = ({ texts = ["Developer.", "Designer."], typingSpeed = 100, deletingSpeed = 50, pauseDuration = 1500 }) => {
@@ -457,9 +457,15 @@ const App = () => {
                     hello@fredahoussi.dev
                   </a>
                   <div className="flex gap-6 justify-center pt-8">
-                    {['GitHub', 'LinkedIn', 'Twitter'].map(social => (
-                      <a key={social} href="/" className="text-sm hover:opacity-60 transition-opacity text-white dark:text-black">
-                        {social}
+                    {socials.map((social) => (
+                      <a
+                        key={social.name}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm hover:opacity-60 transition-opacity text-white dark:text-black"
+                      >
+                        {social.name}
                       </a>
                     ))}
                   </div>

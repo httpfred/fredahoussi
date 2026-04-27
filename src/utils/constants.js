@@ -128,3 +128,8 @@ export const skills = {
     Versioning: ['Git (Github)'],
     design: ['Figma', 'Canvas', 'Photoshop', 'Adobe Illustrator', 'Premiere Pro']
 };
+
+export const socials = [
+  { name: 'GitHub', url: 'https://github.com/httpfred' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fredahoussi/' },
+];

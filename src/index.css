@@ -23,7 +23,7 @@
 
   body {
     font-family: 'Geist', system-ui, -apple-system, sans-serif;
-    background-color: #000000;
+    background-color: #0c515d;
     min-height: 100vh;
   }
 
@@ -426,4 +426,18 @@ h2::after {
 
 .custom-grid {
   animation: gridPulse 8s ease-in-out infinite;
+}
+
+/* Animation du curseur clignotant */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
 }

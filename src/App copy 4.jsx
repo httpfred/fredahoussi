@@ -1,70 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+
+
 import { skills, workExperiences, scrollWords, portfolioItems } from './utils/constants';
-
-// Composant Typewriter pour effet machine à écrire
-const TypewriterText = ({ texts = ["Developer.", "Designer."], typingSpeed = 100, deletingSpeed = 50, pauseDuration = 1500 }) => {
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    const currentText = texts[currentTextIndex];
-    let timeout;
-
-    if (isDeleting) {
-      // Effacement lettre par lettre
-      timeout = setTimeout(() => {
-        setDisplayText(prev => prev.slice(0, -1));
-      }, deletingSpeed);
-    } else {
-      // Écriture lettre par lettre
-      timeout = setTimeout(() => {
-        setDisplayText(prev => currentText.slice(0, prev.length + 1));
-      }, typingSpeed);
-    }
-
-    // Quand l'écriture est terminée
-    if (!isDeleting && displayText === currentText) {
-      timeout = setTimeout(() => setIsDeleting(true), pauseDuration);
-    }
-    // Quand l'effacement est terminé
-    else if (isDeleting && displayText === "") {
-      setIsDeleting(false);
-      setCurrentTextIndex((prev) => (prev + 1) % texts.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentTextIndex, texts, typingSpeed, deletingSpeed, pauseDuration, isVisible]);
-
-  return (
-    <span ref={elementRef} className="inline-block">
-      {displayText}
-      <span className="inline-block w-[2px] h-[0.8em] bg-white ml-1 animate-blink"></span>
-    </span>
-  );
-};
 
 const App = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -223,14 +160,15 @@ const App = () => {
           }}
         />
 
-        {/* Header Section avec animation Typewriter */}
+        {/* Header Section avec animation */}
         <div ref={headerRef} className="section-fade-up">
           <header className="min-h-screen flex flex-col justify-center items-start px-8 md:px-20 relative">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl leading-[0.8] mb-8 text-white dark:text-black font-bold">
+            <h1
+              className="text-6xl md:text-8xl lg:text-9xl leading-[0.8] mb-8 text-white dark:text-black font-bold"
+            >
               I'm Fred<br />
-              <div className="flex flex-wrap items-center gap-2">
-                <TypewriterText texts={["Developer.", "Designer."]} typingSpeed={120} deletingSpeed={60} pauseDuration={1500} />
-              </div>
+              <span>Developer.</span>
+              {/* <span>Designer.</span> */}
             </h1>
           </header>
         </div>
@@ -241,7 +179,7 @@ const App = () => {
             <section className="min-h-screen py-20 px-4 md:px-16">
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center">
-                  Work Experience.
+                  Work Experience
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   {workExperiences.map((exp, index) => (
@@ -274,7 +212,7 @@ const App = () => {
           <div ref={portfolioRef} className="section-fade-up">
             <section className="min-h-screen py-16 px-4 md:py-20 md:px-16">
               <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center">
-                Projects.
+                Projects
               </h2>
               <div className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] container mx-auto">
                 {/* Tabs */}
@@ -314,7 +252,7 @@ const App = () => {
                       `}
                       style={{ zIndex: activeSlide === index ? 10 : 0 }}
                     >
-                      <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white p-6">
+                      <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-light bg-white p-3">
                         <img
                           src={item.image}
                           alt={item.title}
@@ -365,7 +303,6 @@ const App = () => {
                     {[
                       { number: '10+', label: 'Projects' },
                       { number: '10+', label: 'Clients' },
-                      { number: '5+', label: 'Certifications' },
                     ].map((stat, i) => (
                       <div key={i} className="text-center md:text-left">
                         <div className="text-3xl md:text-4xl font-bold text-white dark:text-black">
@@ -377,16 +314,15 @@ const App = () => {
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-                  {Object.entries(skills).map(([category, items], index) => (
+                  {Object.entries(skills).map(([category, items, index]) => (
                     <div
                       className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover"
                       style={{ animationDelay: `${index * 0.1}s` }}
-                      key={category}
-                    >
-                      <h4 className="text-lg font-medium mb-4 capitalize text-white dark:text-white">{category}</h4>
+                      key={category}>
+                      <h4 className="text-lg font-medium mb-4 capitalize text-black dark:text-black">{category}</h4>
                       <ul className="space-y-2">
                         {items.map(skill => (
-                          <li key={skill} className="text-sm opacity-70 py-1 border-b border-gray-400 dark:border-gray-600 text-white dark:text-white">
+                          <li key={skill} className="text-sm opacity-70 py-1 border-b border-gray-400 dark:border-gray-600 text-white dark:text-black">
                             {skill}
                           </li>
                         ))}

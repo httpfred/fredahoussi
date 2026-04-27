@@ -28,14 +28,14 @@ export const portfolioItems = [
         description: 'Cross-platform mobile apps for iOS and Android with React Native.',
         tags: ['React Native', 'Firebase'],
     },
-    {
-        id: 3,
-        title: 'Mobile Application Suite',
-        category: 'Event / Mobile App',
-        image: projet3,
-        description: 'Cross-platform mobile apps for iOS and Android with React Native.',
-        tags: ['React Native', 'Firebase'],
-    },
+    // {
+    //     id: 3,
+    //     title: 'Mobile Application Suite',
+    //     category: 'Event / Mobile App',
+    //     image: projet3,
+    //     description: 'Cross-platform mobile apps for iOS and Android with React Native.',
+    //     tags: ['React Native', 'Firebase'],
+    // },
 ];
 
 // Scroll words with associated illustrations

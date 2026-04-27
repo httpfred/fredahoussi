@@ -93,7 +93,7 @@ const ScrollIndicator = () => {
       onClick={handleClick}
     >
       <span className="text-sm text-white/70 dark:text-black/70 font-medium tracking-wider">
-        Scroll Down
+        Discovery
       </span>
       <div className="flex flex-col items-center gap-1">
         <div className="w-6 h-10 border-2 border-white/50 dark:border-black/50 rounded-full flex justify-center pt-2">

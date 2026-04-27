@@ -433,6 +433,7 @@ h2::after {
   0%, 100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
@@ -440,4 +441,50 @@ h2::after {
 
 .animate-blink {
   animation: blink 0.8s step-end infinite;
+}
+
+
+/* Animation du scroll indicator - souris */
+@keyframes scrollMouse {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-mouse {
+  animation: scrollMouse 1.5s ease-in-out infinite;
+}
+
+/* Animation des points */
+@keyframes scrollDot {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scroll-dot-1 {
+  animation: scrollDot 1.5s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.animate-scroll-dot-2 {
+  animation: scrollDot 1.5s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-scroll-dot-3 {
+  animation: scrollDot 1.5s ease-in-out infinite;
+  animation-delay: 0.6s;
 }

@@ -34,22 +34,18 @@ const TypewriterText = ({ texts = ["Developer.", "Designer."], typingSpeed = 100
     let timeout;
 
     if (isDeleting) {
-      // Effacement lettre par lettre
       timeout = setTimeout(() => {
         setDisplayText(prev => prev.slice(0, -1));
       }, deletingSpeed);
     } else {
-      // Écriture lettre par lettre
       timeout = setTimeout(() => {
         setDisplayText(prev => currentText.slice(0, prev.length + 1));
       }, typingSpeed);
     }
 
-    // Quand l'écriture est terminée
     if (!isDeleting && displayText === currentText) {
       timeout = setTimeout(() => setIsDeleting(true), pauseDuration);
     }
-    // Quand l'effacement est terminé
     else if (isDeleting && displayText === "") {
       setIsDeleting(false);
       setCurrentTextIndex((prev) => (prev + 1) % texts.length);
@@ -63,6 +59,53 @@ const TypewriterText = ({ texts = ["Developer.", "Designer."], typingSpeed = 100
       {displayText}
       <span className="inline-block w-[2px] h-[0.8em] bg-white ml-1 animate-blink"></span>
     </span>
+  );
+};
+
+// Composant Scroll Indicator
+const ScrollIndicator = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleClick = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <div
+      className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-20 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
+      onClick={handleClick}
+    >
+      <span className="text-sm text-white/70 dark:text-black/70 font-medium tracking-wider">
+        Scroll Down
+      </span>
+      <div className="flex flex-col items-center gap-1">
+        <div className="w-6 h-10 border-2 border-white/50 dark:border-black/50 rounded-full flex justify-center pt-2">
+          <div className="w-1.5 h-1.5 bg-white/70 dark:bg-black/70 rounded-full animate-scroll-mouse"></div>
+        </div>
+        <div className="flex gap-1">
+          <div className="w-1.5 h-1.5 bg-white/50 dark:bg-black/50 rounded-full animate-scroll-dot-1"></div>
+          <div className="w-1.5 h-1.5 bg-white/50 dark:bg-black/50 rounded-full animate-scroll-dot-2"></div>
+          <div className="w-1.5 h-1.5 bg-white/50 dark:bg-black/50 rounded-full animate-scroll-dot-3"></div>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -223,9 +266,9 @@ const App = () => {
           }}
         />
 
-        {/* Header Section avec animation Typewriter */}
-        <div ref={headerRef} className="section-fade-up">
-          <header className="min-h-screen flex flex-col justify-center items-start px-8 md:px-20 relative">
+        {/* Header Section avec animation Typewriter et Scroll Indicator */}
+        <div ref={headerRef} className="section-fade-up min-h-screen relative">
+          <header className="min-h-screen flex flex-col justify-center items-start px-8 md:px-20">
             <h1 className="text-6xl md:text-8xl lg:text-9xl leading-[0.8] mb-8 text-white dark:text-black font-bold">
               I'm Fred<br />
               <div className="flex flex-wrap items-center gap-2">
@@ -233,43 +276,12 @@ const App = () => {
               </div>
             </h1>
           </header>
+
+          {/* Scroll Indicator */}
+          <ScrollIndicator />
         </div>
 
         <main>
-          {/* Work Experience Section avec animation */}
-          <div ref={workRef} className="section-fade-up">
-            <section className="min-h-screen py-20 px-4 md:px-16">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center">
-                  Work Experience.
-                </h2>
-                <div className="grid md:grid-cols-3 gap-6">
-                  {workExperiences.map((exp, index) => (
-                    <div
-                      key={exp.id}
-                      className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <div className="text-5xl mb-4">{exp.logo}</div>
-                      <h3 className="text-xl font-bold text-white mb-1">{exp.company}</h3>
-                      <p className="text-sm text-white/60 mb-2">{exp.position}</p>
-                      <p className="text-xs text-white/40 mb-4">{exp.period}</p>
-                      <p className="text-sm text-white/80 mb-4">{exp.description}</p>
-                      <ul className="space-y-1">
-                        {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="text-xs text-white/60 flex items-center gap-2">
-                            <span className="text-green-400">✓</span>
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          </div>
-
           {/* Portfolio Showcase Section avec animation */}
           <div ref={portfolioRef} className="section-fade-up">
             <section className="min-h-screen py-16 px-4 md:py-20 md:px-16">
@@ -341,6 +353,40 @@ const App = () => {
                           </div>
                         </div>
                       </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* Work Experience Section avec animation */}
+          <div ref={workRef} className="section-fade-up">
+            <section className="min-h-screen py-20 px-4 md:px-16">
+              <div className="max-w-7xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center">
+                  Work Experience.
+                </h2>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {workExperiences.map((exp, index) => (
+                    <div
+                      key={exp.id}
+                      className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <div className="text-5xl mb-4">{exp.logo}</div>
+                      <h3 className="text-xl font-bold text-white mb-1">{exp.company}</h3>
+                      <p className="text-sm text-white/60 mb-2">{exp.position}</p>
+                      <p className="text-xs text-white/40 mb-4">{exp.period}</p>
+                      <p className="text-sm text-white/80 mb-4">{exp.description}</p>
+                      <ul className="space-y-1">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i} className="text-xs text-white/60 flex items-center gap-2">
+                            <span className="text-green-400">✓</span>
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   ))}
                 </div>

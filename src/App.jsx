@@ -236,27 +236,27 @@ const App = () => {
                 ))}
               </div> */}
               <div className={`
-  absolute left-0 right-0 z-10 flex justify-center gap-2 flex-wrap
-  md:-bottom-16 -bottom-28
-  pb-4 md:pb-0
-`}>
-  {portfolioItems.map((item, index) => (
-    <button
-      key={item.id}
-      onClick={() => setActiveSlide(index)}
-      className={`
-        px-3 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium
-        transition-all duration-300 cursor-pointer
-        ${activeSlide === index
-          ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-lg scale-105'
-          : 'bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700'
-        }
-      `}
-    >
-      {item.category}
-    </button>
-  ))}
-</div>
+                  absolute left-0 right-0 z-10 flex justify-center gap-2 flex-wrap
+                  md:-bottom-16 -bottom-28
+                  pb-4 md:pb-0
+                `}>
+                {portfolioItems.map((item, index) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveSlide(index)}
+                    className={`
+                    px-3 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium
+                    transition-all duration-300 cursor-pointer
+                    ${activeSlide === index
+                                    ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-lg scale-105'
+                                    : 'bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700'
+                                  }
+                  `}
+                  >
+                    {item.category}
+                  </button>
+                ))}
+              </div>
 
               {/* Panels */}
               <div className="relative w-full h-full">
@@ -308,10 +308,10 @@ const App = () => {
                             ))}
                           </div>
                           <div className="flex gap-3 md:gap-4">
-                            <a href="#" className="px-4 md:px-6 py-2 md:py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-white/90 hover:translate-x-1 transition-all">
+                            <a href="/" className="px-4 md:px-6 py-2 md:py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-white/90 hover:translate-x-1 transition-all">
                               View Project →
                             </a>
-                            <a href="#" className="px-4 md:px-6 py-2 md:py-3 border border-white text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
+                            <a href="/" className="px-4 md:px-6 py-2 md:py-3 border border-white text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
                               Case Study
                             </a>
                           </div>
@@ -381,7 +381,7 @@ const App = () => {
                 <div className="flex gap-6 justify-center pt-8">
                   {/* {['GitHub', 'LinkedIn', 'Twitter', 'Instagram'].map(social => ( */}
                   {['GitHub', 'LinkedIn', 'Twitter'].map(social => (
-                    <a key={social} href="#" className="text-sm hover:opacity-60 transition-opacity text-white dark:text-black">
+                    <a key={social} href="/" className="text-sm hover:opacity-60 transition-opacity text-white dark:text-black">
                       {social}
                     </a>
                   ))}

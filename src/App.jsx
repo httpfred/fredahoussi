@@ -246,6 +246,7 @@ const App = () => {
       <div className="custom-grid"></div>
 
       {/* Content wrapper with higher z-index */}
+
       <div className="relative z-10">
         {/* Custom cursor */}
         <div
@@ -326,7 +327,7 @@ const App = () => {
                       `}
                       style={{ zIndex: activeSlide === index ? 10 : 0 }}
                     >
-                      <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white p-6">
+                      <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white/10 p-6">
                         <img
                           src={item.image}
                           alt={item.title}
@@ -400,7 +401,7 @@ const App = () => {
               <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
                 <div>
                   <h2 className="text-5xl md:text-7xl mb-6 text-white dark:text-black font-bold">
-                    About<br />me.
+                    About me.
                   </h2>
                   <p className="text-lg leading-relaxed opacity-80 mb-8 text-white dark:text-black">
                     I'm a creative developer and designer who builds exceptional digital experiences.
@@ -449,7 +450,7 @@ const App = () => {
             <section className="min-h-[70vh] flex items-center justify-center text-center py-16 px-8">
               <div>
                 <h2 className="text-5xl md:text-7xl lg:text-8xl mb-8 text-white dark:text-black font-bold">
-                  let's<br />create.
+                  let's create.
                 </h2>
                 <div className="space-y-4">
                   <a href="mailto:hello@fredahoussi.dev" className="text-xl md:text-2xl hover:opacity-60 transition-opacity block text-white dark:text-black">

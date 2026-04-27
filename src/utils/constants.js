@@ -67,7 +67,7 @@ export const workExperiences = [
             'Tests manuels via Postman (authentification, transactions, erreurs)',
             'Reporting des résultats et anomalies dans Excel'
         ],
-        logo: '🏢'
+        logo: '..'
     },
     {
         id: 2,
@@ -78,12 +78,12 @@ export const workExperiences = [
         achievements: [
             'Conception et maintenance d’applications web',
         ],
-        logo: '🏢'
+        logo: '..'
     },
     {
         id: 3,
         company: 'PROGI-TECK.',
-        position: 'DEVELOPPEUR – DÉSIGNER – COMMUNITY MANAGER STAGIAIRE',
+        position: 'Developer – Designer – Intern Community manager',
         period: '19 Aout 2024 – 1 Octobre 2024',
         description: 'Digital Group',
         achievements: [
@@ -91,23 +91,23 @@ export const workExperiences = [
             'Mise sur pied d’une identité visuelle',
             'Mise en production des applications'
         ],
-        logo: '🏢'
+        logo: '..'
     },
     {
         id: 4,
         company: 'ACTIV.',
-        position: 'DEVELOPPEUR STAGIAIRE',
+        position: 'Intern Developer',
         period: '17 Avril 2023 – 02 Octobre 2023',
         description: 'Digital Group',
         achievements: [
             'Conception et maintenance d`\’applications web et mobile',
         ],
-        logo: '🏢'
+        logo: '..'
     },
     {
         id: 5,
         company: 'OREO GROUP.',
-        position: 'DEVELOPPEUR WEB – DÉSIGNER',
+        position: 'Web Developer – Designer',
         period: '22 Août 2022 – 03 Mars 2022',
         description: 'Startup',
         achievements: [
@@ -115,7 +115,7 @@ export const workExperiences = [
             'Mise sur pied d’une identité visuelle',
             'Mise en production des applications'
         ],
-        logo: '🏢'
+        logo: '..'
     }
 ];
 

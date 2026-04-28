@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { skills, workExperiences, scrollWords, portfolioItems, socials } from './utils/constants';
+import { Analytics } from '@vercel/analytics/react';
 
 // Composant Typewriter pour effet machine à écrire
 const TypewriterText = ({ texts = ["Developer.", "Designer."], typingSpeed = 100, deletingSpeed = 50, pauseDuration = 1500 }) => {
@@ -479,6 +480,8 @@ const App = () => {
           <p>fredahoussi.dev &copy; 2026</p>
         </footer>
       </div>
+
+      <Analytics />
     </div>
   );
 };

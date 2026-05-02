@@ -1,13 +1,13 @@
 // Import des images locales
 import projet1 from '../assets/img/work/unikdress.png';
 import projet2 from '../assets/img/work/oriplat.png';
-import projet3 from '../assets/img/work/showilink.png';
+import projet3 from '../assets/img/work/agricopay.png';
 
 // Ou import groupé
 export const images = {
     projet1: require('../assets/img/work/unikdress.png'),
     projet2: require('../assets/img/work/oriplat.png'),
-    projet3: require('../assets/img/work/showilink.png'),
+    projet3: require('../assets/img/work/agricopay.png'),
 };
 
 // Portfolio content
@@ -27,6 +27,15 @@ export const portfolioItems = [
         image: projet2,
         description: 'Cross-platform mobile apps for iOS and Android with React Native.',
         tags: ['React Native', 'Firebase'],
+    },
+    {
+        id: 3,
+        title: 'Mobile Application Suite',
+        // category: 'Purchase of agricultural products ',
+        category: 'POS / Mobile App',
+        image: projet3,
+        description: 'Cross-platform mobile apps for iOS and Android with React Native.',
+        tags: ['Fluter', 'Firebase'],
     },
     // {
     //     id: 3,
@@ -130,6 +139,6 @@ export const skills = {
 };
 
 export const socials = [
-  { name: 'GitHub', url: 'https://github.com/httpfred' },
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fredahoussi/' },
+    { name: 'GitHub', url: 'https://github.com/httpfred' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fredahoussi/' },
 ];

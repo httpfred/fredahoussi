@@ -2,8 +2,6 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { skills, workExperiences, scrollWords, portfolioItems, socials } from './utils/constants';
 import { Analytics } from '@vercel/analytics/react';
 
-import me from './assets/img/me/fred.png';
-
 // Composant Typewriter pour effet machine à écrire
 const TypewriterText = ({ texts = ["Developer.", "Designer."], typingSpeed = 100, deletingSpeed = 50, pauseDuration = 1500 }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -272,7 +270,6 @@ const App = () => {
 
         {/* Header Section avec animation Typewriter et Scroll Indicator */}
         <div ref={headerRef} className="section-fade-up min-h-screen relative">
-          {/* 
           <header className="min-h-screen flex flex-col justify-center items-start px-8 md:px-20">
             <h1 className="text-6xl md:text-8xl lg:text-9xl leading-[0.8] mb-8 text-white dark:text-black font-bold">
               I'm Fred<br />
@@ -280,30 +277,6 @@ const App = () => {
                 <TypewriterText texts={["Developer.", "Designer."]} typingSpeed={120} deletingSpeed={60} pauseDuration={1500} />
               </div>
             </h1>
-          </header>
-          */}
-          <header className="min-h-screen flex flex-col justify-center items-center px-8 md:px-20">
-            <div className="flex items-center gap-6">
-              <img
-                src={me}
-                alt="Fred"
-                className="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-white dark:border-black"
-              />
-
-              <h1 className="text-3xl md:text-5xl leading-[0.8] text-white dark:text-black font-bold">
-              {/* <h1 className="text-6xl md:text-8xl lg:text-9xl leading-[0.8] text-white dark:text-black font-bold"> */}
-                I'm Fred
-                {/* <div className="flex items-center gap-2 text-3xl md:text-5xl mt-2"> */}
-                <div className="flex items-center gap-2 text-3xl md:text-5xl mt-2">
-                  <TypewriterText
-                    texts={["Developer.", "Designer."]}
-                    typingSpeed={120}
-                    deletingSpeed={60}
-                    pauseDuration={1500}
-                  />
-                </div>
-              </h1>
-            </div>
           </header>
 
           {/* Scroll Indicator */}
@@ -355,8 +328,7 @@ const App = () => {
                       `}
                       style={{ zIndex: activeSlide === index ? 10 : 0 }}
                     >
-                      <div className="relative w-full h-full overflow-hidden group border border-white/10 p-6">
-                      {/* <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white/10 p-6"> */}
+                      <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white/10 p-6">
                         <img
                           src={item.image}
                           alt={item.title}
@@ -365,8 +337,7 @@ const App = () => {
                             ${activeSlide === index ? 'scale-105' : 'scale-100'}
                           `}
                         />
-                        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" /> */}
-                        <div className="absolute inset-0 bg-gradient-to-t  via-black/20 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                         <div className={`
                           absolute bottom-0 left-0 right-0 p-6 md:p-8 lg:p-12 text-white
                           transition-all duration-700 delay-200

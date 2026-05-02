@@ -3,6 +3,7 @@ import { skills, workExperiences, scrollWords, portfolioItems, socials } from '.
 import { Analytics } from '@vercel/analytics/react';
 
 import me from './assets/img/me/fred.png';
+// import me from './assets/img/me/fred-full.png';
 
 // Composant Typewriter pour effet machine à écrire
 const TypewriterText = ({ texts = ["Developer.", "Designer."], typingSpeed = 100, deletingSpeed = 50, pauseDuration = 1500 }) => {
@@ -287,7 +288,7 @@ const App = () => {
               <img
                 src={me}
                 alt="Fred"
-                className="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-white dark:border-black"
+                className="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-white dark:border-black bg-white/5 backdrop-blur-sm"
               />
 
               <h1 className="text-3xl md:text-5xl leading-[0.8] text-white dark:text-black font-bold">
@@ -355,7 +356,8 @@ const App = () => {
                       `}
                       style={{ zIndex: activeSlide === index ? 10 : 0 }}
                     >
-                      <div className="relative w-full h-full overflow-hidden group border border-white/10 p-6">
+                      <div className="relative w-full h-full overflow-hidden group p-6 bg-white/2 backdrop-blur-sm">
+                      {/* <div className="relative w-full h-full overflow-hidden group border border-white/10 p-6 bg-white/2 backdrop-blur-sm rounded-2xl"> */}
                       {/* <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white/10 p-6"> */}
                         <img
                           src={item.image}

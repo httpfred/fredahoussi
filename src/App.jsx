@@ -316,7 +316,7 @@ const App = () => {
           {/* Portfolio Showcase Section avec animation */}
           <div ref={portfolioRef} className="section-fade-up">
             <section className="min-h-screen py-16 px-4 md:py-20 md:px-16">
-              <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center">
+              <h2 className="max-w-7xl mx-auto text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center md:text-left">
                 01. Projects
               </h2>
               <div className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] container mx-auto">
@@ -399,7 +399,7 @@ const App = () => {
           <div ref={workRef} className="section-fade-up">
             <section className="min-h-screen py-20 px-4 md:px-16">
               <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center">
+                <h2 className="max-w-7xl mx-auto text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center md:text-left">
                   02. Work Experience
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
@@ -434,7 +434,7 @@ const App = () => {
             <section className="min-h-screen py-20 px-8 md:px-20 flex items-center">
               <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
                 <div>
-                  <h2 className="text-5xl md:text-7xl mb-6 text-white dark:text-black font-bold">
+                  <h2 className="max-w-7xl mx-auto text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center md:text-left">
                     03. About me
                   </h2>
                   <p className="text-lg leading-relaxed opacity-80 mb-8 text-white dark:text-black">

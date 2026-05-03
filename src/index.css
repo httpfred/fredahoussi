@@ -339,9 +339,13 @@ body.light .bg-grid-pattern {
 }
 
 /* Animation pour les titres de section */
+
 h2 {
-  position: relative;
-  display: inline-block;
+  /* position: relative; */
+  display: block;
+  /* display: inline-block; */
+  /* width: 100%; */
+  /* text-align: center; */
 }
 
 /* h2::after {

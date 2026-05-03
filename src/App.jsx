@@ -3,6 +3,7 @@ import { skills, workExperiences, scrollWords, portfolioItems, socials } from '.
 import { Analytics } from '@vercel/analytics/react';
 
 import me from './assets/img/me/fred.png';
+import { FaPlay } from 'react-icons/fa';
 // import me from './assets/img/me/fred-full.png';
 
 // Composant Typewriter pour effet machine à écrire
@@ -292,7 +293,7 @@ const App = () => {
               />
 
               <h1 className="text-3xl md:text-5xl leading-[0.8] text-white dark:text-black font-bold">
-              {/* <h1 className="text-6xl md:text-8xl lg:text-9xl leading-[0.8] text-white dark:text-black font-bold"> */}
+                {/* <h1 className="text-6xl md:text-8xl lg:text-9xl leading-[0.8] text-white dark:text-black font-bold"> */}
                 I'm Fred
                 {/* <div className="flex items-center gap-2 text-3xl md:text-5xl mt-2"> */}
                 <div className="flex items-center gap-2 text-3xl md:text-5xl mt-2">
@@ -316,7 +317,7 @@ const App = () => {
           <div ref={portfolioRef} className="section-fade-up">
             <section className="min-h-screen py-16 px-4 md:py-20 md:px-16">
               <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center">
-                Projects.
+                01. Projects
               </h2>
               <div className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] container mx-auto">
                 {/* Tabs */}
@@ -357,8 +358,8 @@ const App = () => {
                       style={{ zIndex: activeSlide === index ? 10 : 0 }}
                     >
                       <div className="relative w-full h-full overflow-hidden group p-6 bg-white/2 backdrop-blur-sm">
-                      {/* <div className="relative w-full h-full overflow-hidden group border border-white/10 p-6 bg-white/2 backdrop-blur-sm rounded-2xl"> */}
-                      {/* <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white/10 p-6"> */}
+                        {/* <div className="relative w-full h-full overflow-hidden group border border-white/10 p-6 bg-white/2 backdrop-blur-sm rounded-2xl"> */}
+                        {/* <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white/10 p-6"> */}
                         <img
                           src={item.image}
                           alt={item.title}
@@ -378,9 +379,10 @@ const App = () => {
                           }
                         `}>
                           <div className="max-w-2xl">
-                            <div className="flex gap-3 md:gap-4">
-                              <a href="/" className="px-4 md:px-6 py-2 md:py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-white/90 hover:translate-x-1 transition-all">
-                                View Project →
+                            <div className="flex gap-3 md:gap-4 ">
+                              <a href="/" className="flex flex group items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-white/90 hover:translate-x-1 transition-all">
+                                Run as
+                                <FaPlay className="transition-transform group-hover:translate-x-1" />
                               </a>
                             </div>
                           </div>
@@ -398,7 +400,7 @@ const App = () => {
             <section className="min-h-screen py-20 px-4 md:px-16">
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-black mb-12 text-center">
-                  Work Experience.
+                  02. Work Experience
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   {workExperiences.map((exp, index) => (
@@ -433,7 +435,7 @@ const App = () => {
               <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
                 <div>
                   <h2 className="text-5xl md:text-7xl mb-6 text-white dark:text-black font-bold">
-                    About me.
+                    03. About me
                   </h2>
                   <p className="text-lg leading-relaxed opacity-80 mb-8 text-white dark:text-black">
                     I'm a creative developer and designer who builds exceptional digital experiences.

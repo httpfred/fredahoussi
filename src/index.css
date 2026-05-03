@@ -344,7 +344,7 @@ h2 {
   display: inline-block;
 }
 
-h2::after {
+/* h2::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -357,7 +357,7 @@ h2::after {
 
 .section-visible h2::after {
   width: 100%;
-}
+} */
 
 /* Animation au scroll pour les listes de compétences */
 .section-visible ul li {

@@ -372,7 +372,7 @@ const App = () => {
                       style={{ zIndex: activeSlide === index ? 10 : 0 }}
                     >
                       <div className="relative w-full h-full overflow-hidden group p-6  border border-white/10 backdrop-blur-sm">
-                      {/* <div className="relative w-full h-full overflow-hidden group p-6  border border-white/10 rounded-2xl bg-black/70 backdrop-blur-sm"> */}
+                        {/* <div className="relative w-full h-full overflow-hidden group p-6  border border-white/10 rounded-2xl bg-black/70 backdrop-blur-sm"> */}
                         {/* <div className="relative w-full h-full overflow-hidden group border border-white/10 p-6 bg-white/2 backdrop-blur-sm rounded-2xl"> */}
                         {/* <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white/10 p-6"> */}
                         <img
@@ -429,7 +429,7 @@ const App = () => {
                     >
                       <div className="text-5xl mb-4">{exp.logo}</div>
                       <h3 className="text-xl font-bold text-white mb-1">{exp.company}</h3>
-                      <p className="text-sm text-white/60 mb-2">{exp.position}</p>
+                      <p className="text-sm text-white/60 mb-2"> <span className='px-2 border border-white/10 bg-white/10 text-black'>{exp.grade}</span> <span>{exp.position}</span></p>
                       <p className="text-xs text-white/40 mb-4">{exp.period}</p>
                       <p className="text-sm text-white/80 mb-4">{exp.description}</p>
                       <ul className="space-y-1">
@@ -482,7 +482,7 @@ const App = () => {
                       style={{ animationDelay: `${index * 0.1}s` }}
                       key={category}
                     >
-                      <h4 className="text-lg font-medium mb-4 capitalize text-white dark:text-white">{category}</h4>
+                      <h4 className="text-lg font-medium  mb-4 capitalize text-white dark:text-white">{category}</h4>
                       <ul className="space-y-2">
                         {items.map(skill => (
                           <li key={skill} className="text-sm opacity-70 py-1 border-b border-gray-400 dark:border-gray-600 text-white dark:text-white">

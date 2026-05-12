@@ -66,21 +66,24 @@ export const workExperiences = [
         id: 1,
         company: 'I-MONEY AFRICA.',
         position: 'Full Stack Developer',
-        period: '10 Juin 2025 – 10 Décembre 2025',
+        grade: 'Intern',
+        period: 'Juin 2025 – Décembre 2025',
         description: 'Fintech Group',
         achievements: [
             'Conception et maintenance de plateformes web',
             'Elaboration de plans et cas de tests pour des API de paiement',
-            'Tests manuels via Postman (authentification, transactions, erreurs)',
-            'Reporting des résultats et anomalies dans Excel'
+            'Réalisation de tests manuels avec Postman (authentification, transactions, gestion des erreurs)',
+            'Analyse et reporting des anomalies détectées',
+            'Collaboration avec les équipes techniques pour la validation des fonctionnalités'
         ],
         logo: '..'
     },
     {
         id: 2,
         company: 'OXYGENE CI.',
-        position: 'Developer Remote',
-        period: '24 Mars 2025 – 06 juin 2025',
+        position: 'Developer',
+        grade: 'Remote',
+        period: 'Juin 2025 – Juin 2025',
         description: 'Digital Group',
         achievements: [
             'Conception et maintenance d’applications web',
@@ -90,8 +93,9 @@ export const workExperiences = [
     {
         id: 3,
         company: 'PROGI-TECK.',
-        position: 'Developer – Designer – Intern Community manager',
-        period: '19 Aout 2024 – 1 Octobre 2024',
+        position: 'Developer – Designer – Community manager',
+        grade: 'CDD',
+        period: 'Juin 2024 – Octobre 2024',
         description: 'Digital Group',
         achievements: [
             'Conception et maintenance d’applications web',
@@ -103,8 +107,9 @@ export const workExperiences = [
     {
         id: 4,
         company: 'ACTIV.',
-        position: 'Intern Developer',
-        period: '17 Avril 2023 – 02 Octobre 2023',
+        position: 'Developer',
+        grade: 'Intern',
+        period: 'Juin 2023 – Octobre 2023',
         description: 'Digital Group',
         achievements: [
             'Conception et maintenance d`\’applications web et mobile',
@@ -115,7 +120,8 @@ export const workExperiences = [
         id: 5,
         company: 'OREO GROUP.',
         position: 'Web Developer – Designer',
-        period: '22 Août 2022 – 03 Mars 2022',
+        grade: 'CDD',
+        period: 'Juin 2022 – Mars 2022',
         description: 'Startup',
         achievements: [
             'Conception et maintenance d’applications web et mobile',
@@ -127,13 +133,15 @@ export const workExperiences = [
 ];
 
 export const skills = {
-    frontend: ['Javascript', 'React.js', 'Vue.js', 'Angular', 'Java', 'TypeScript', 'Jquery', 'Flask', 'Tailwind CSS', 'Bootstrap'],
-    backend: ['Node.js', 'Laravel', 'Spring Boot', 'Firebase'],
-    Database: ['MySQL', 'SQLite', 'NoSQL'],
-    mobile: ['React Native', 'Flutter'],
+    FRONTEND: ['Javascript', 'React.js', 'Vue.js', 'Angular', 'Java', 'TypeScript', 'Jquery', 'Flask', 'Tailwind CSS', 'Bootstrap'],
+    BACKEND: ['Node.js', 'Laravel', 'Spring Boot', 'Firebase'],
+    DATABASE: ['MySQL', 'SQLite', 'NoSQL'],
+    MOBILE: ['React Native', 'Flutter'],
     CMS: ['Wordpress'],
-    Versioning_CICD: ['Git (Github)', 'Docker', 'GitHub Actions'],
-    design: ['Figma', 'Canvas', 'Photoshop', 'Adobe Illustrator', 'Premiere Pro']
+    'VERSIONING & CI/CD': ['Git (GitHub)', 'Docker', 'GitHub Actions'],
+    DESIGN: ['Figma', 'Canvas', 'Photoshop', 'Adobe Illustrator', 'Premiere Pro'],
+    'APIs / TESTING TOOLS': ['Postman'],
+    'MANAGEMENT METHODS': ['Agile', 'Scrum', 'UML']
 };
 
 export const socials = [

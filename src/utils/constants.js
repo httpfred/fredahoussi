@@ -17,8 +17,8 @@ export const portfolioItems = [
         title: 'E-Commerce Platform',
         category: 'E-commerce / Web App',
         image: projet1,
-        description: 'E-commerce platform for DonHugo, Fashion Designer in Ivory Coast, built with React and Node.js.',
-        tags: ['React', 'Node.js', 'Stripe'],
+        description: 'E-commerce platform for DonHugo, Fashion Designer in Ivory Coast, built with Vue.Js and Firebase.',
+        tags: ['Vue.js', 'Node.js', 'Stripe'],
         url: "",
         technologies: ["Vue.js", "Tailwind", "Firebase", "Stripe"]
     },

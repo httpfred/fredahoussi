@@ -505,7 +505,7 @@ const App = () => {
                   let's create.
                 </h2>
                 <div className="space-y-4">
-                  <a href="mailto:fredahoussi@gmail.com" className="text-xl md:text-2xl hover:opacity-60 transition-opacity block text-white dark:text-black">
+                  <a href="mailto:ahoussifred@gmail.com" className="text-xl md:text-2xl hover:opacity-60 transition-opacity block text-white dark:text-black">
                     {/* hello@fredahoussi.dev */}
                     fredahoussi.dev
                   </a>

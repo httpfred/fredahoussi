@@ -17,34 +17,32 @@ export const portfolioItems = [
         title: 'E-Commerce Platform',
         category: 'E-commerce / Web App',
         image: projet1,
-        description: 'Full-stack e-commerce solution with seamless payment integration.',
+        description: 'E-commerce platform for DonHugo, Fashion Designer in Ivory Coast, built with React and Node.js.',
         tags: ['React', 'Node.js', 'Stripe'],
+        url: "",
+        technologies: ["Vue.js", "Tailwind", "Firebase", "Stripe"]
     },
     {
         id: 2,
-        title: 'Mobile Application Suite',
+        title: 'Oriplat Mobile App',
         category: 'Food / Mobile App',
         image: projet2,
-        description: 'Cross-platform mobile apps for iOS and Android with React Native.',
+        description: 'Food delivery app for Oriplat, a restaurant in Ivory Coast, built with React Native and Firebase.',
         tags: ['React Native', 'Firebase'],
+        url: "",
+        technologies: ["React Native", "Laravel", "Firebase", 'MySQL']
     },
     {
         id: 3,
-        title: 'Mobile Application Suite',
-        // category: 'Purchase of agricultural products ',
+        title: 'Agricopay Mobile App',
+        // title: 'Mobile Application Suite',
         category: 'POS / Mobile App',
         image: projet3,
-        description: 'Cross-platform mobile apps for iOS and Android with React Native.',
-        tags: ['Fluter', 'Firebase'],
+        description: 'Agricopay enables farmers to purchase agricultural products(pesticides, fertilizers, seeds, etc.) from points of sale(POS) with flexible payment options: cash, mobile money.',
+        tags: ['Fluter', 'Laravel'],
+        url: "",
+        technologies: ["Flutter", "Laravel", "SQLite"]
     },
-    // {
-    //     id: 3,
-    //     title: 'Mobile Application Suite',
-    //     category: 'Event / Mobile App',
-    //     image: projet3,
-    //     description: 'Cross-platform mobile apps for iOS and Android with React Native.',
-    //     tags: ['React Native', 'Firebase'],
-    // },
 ];
 
 // Scroll words with associated illustrations
@@ -129,12 +127,12 @@ export const workExperiences = [
 ];
 
 export const skills = {
-    frontend: ['Javascript', 'React.js', 'Vue.js', 'Angular', 'TypeScript', 'Jquery', 'Flask', 'Tailwind CSS', 'Bootstrap'],
-    backend: ['Node.js', 'Laravel', 'Firebase'],
-    SGBD: ['MySQL', 'SQLite'],
-    mobile: ['React Native',],
+    frontend: ['Javascript', 'React.js', 'Vue.js', 'Angular', 'Java', 'TypeScript', 'Jquery', 'Flask', 'Tailwind CSS', 'Bootstrap'],
+    backend: ['Node.js', 'Laravel', 'Spring Boot', 'Firebase'],
+    Database: ['MySQL', 'SQLite', 'NoSQL'],
+    mobile: ['React Native', 'Flutter'],
     CMS: ['Wordpress'],
-    Versioning: ['Git (Github)'],
+    Versioning_CICD: ['Git (Github)', 'Docker', 'GitHub Actions'],
     design: ['Figma', 'Canvas', 'Photoshop', 'Adobe Illustrator', 'Premiere Pro']
 };
 

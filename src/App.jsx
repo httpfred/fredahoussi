@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 import me from './assets/img/me/fred.png';
 import { FaPlay } from 'react-icons/fa';
+import notFoundImage from './assets/img/icon/not-found.gif';
 // import me from './assets/img/me/fred-full.png';
 
 // Composant Typewriter pour effet machine à écrire
@@ -126,6 +127,19 @@ const App = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleRunAs = (item) => {
+    if (item.url && item.url.trim() !== '') {
+      window.open(item.url, '_blank');
+    } else {
+      setSelectedProject(item);
+      setIsModalOpen(true);
+    }
+  };
+
 
   // Refs pour les animations d'apparition
   const headerRef = useRef(null);
@@ -288,13 +302,13 @@ const App = () => {
             <div className="flex items-center gap-6">
               <img
                 src={me}
-                alt="Fred"
+                alt="Fred Ahoussi"
                 className="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-white dark:border-black bg-white/5 backdrop-blur-sm"
               />
 
               <h1 className="text-3xl md:text-5xl leading-[0.8] text-white dark:text-black font-bold">
                 {/* <h1 className="text-6xl md:text-8xl lg:text-9xl leading-[0.8] text-white dark:text-black font-bold"> */}
-                I'm Fred
+                I'm Fred A.
                 {/* <div className="flex items-center gap-2 text-3xl md:text-5xl mt-2"> */}
                 <div className="flex items-center gap-2 text-3xl md:text-5xl mt-2">
                   <TypewriterText
@@ -380,10 +394,13 @@ const App = () => {
                         `}>
                           <div className="max-w-2xl">
                             <div className="flex gap-3 md:gap-4 ">
-                              <a href="/" className="flex flex group items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-white/90 hover:translate-x-1 transition-all">
+                              <button
+                                onClick={() => handleRunAs(item)}
+                                className="flex group items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-white/90 hover:translate-x-1 transition-all"
+                              >
                                 Run as
                                 <FaPlay className="transition-transform group-hover:translate-x-1" />
-                              </a>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -487,8 +504,9 @@ const App = () => {
                   let's create.
                 </h2>
                 <div className="space-y-4">
-                  <a href="mailto:hello@fredahoussi.dev" className="text-xl md:text-2xl hover:opacity-60 transition-opacity block text-white dark:text-black">
-                    hello@fredahoussi.dev
+                  <a href="mailto:fredahoussi@gmail.com" className="text-xl md:text-2xl hover:opacity-60 transition-opacity block text-white dark:text-black">
+                    {/* hello@fredahoussi.dev */}
+                    fredahoussi.dev
                   </a>
                   <div className="flex gap-6 justify-center pt-8">
                     {socials.map((social) => (
@@ -513,6 +531,56 @@ const App = () => {
           <p>fredahoussi.dev &copy; 2026</p>
         </footer>
       </div>
+
+      {/* Modal Projet */}
+      {isModalOpen && selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+          <div className="relative w-full max-w-lg bg-[#111] text-white rounded-2xl p-6 border border-white/10 animate-scale-up">
+
+            {/* Bouton fermer */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-white/60 hover:text-white text-xl"
+            >
+              ✕
+            </button>
+
+            <div className="space-y-4">
+              <img src={notFoundImage} alt="" className='rounded-2xl' />
+
+              <h3 className="text-2xl font-bold">
+                {selectedProject.title}
+              </h3>
+
+              <p className="text-white/70 leading-relaxed">
+                {selectedProject.description || "Description indisponible."}
+              </p>
+
+              {selectedProject.technologies && (
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {selectedProject.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 text-xs rounded-full bg-white/10 border border-white/10"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <div className="pt-4">
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-5 py-2 rounded-full bg-white text-black hover:bg-white/90 transition"
+                >
+                  Fermer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Analytics />
     </div>

@@ -102,7 +102,7 @@ const ScrollIndicator = () => {
         Discovery
       </span>
       <div className="flex flex-col items-center gap-1">
-        <div className="w-6 h-10 border-2 border-white/50 dark:border-black/50 rounded-full flex justify-center pt-2">
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full dark:border-black/50 flex justify-center pt-2">
           <div className="w-1.5 h-1.5 bg-white/70 dark:bg-black/70 rounded-full animate-scroll-mouse"></div>
         </div>
         <div className="flex gap-1">
@@ -269,7 +269,7 @@ const App = () => {
       <div className="relative z-10">
         {/* Custom cursor */}
         <div
-          className="fixed w-8 h-8 rounded-full pointer-events-none z-50 transition-all duration-150 ease-out hidden lg:block"
+          className="fixed w-8 h-8 pointer-events-none z-50 transition-all duration-150 ease-out hidden lg:block"
           style={{
             transform: `translate(${mousePosition.x - 16}px, ${mousePosition.y - 16}px)`,
             background: `radial-gradient(circle, oklch(65% 0.3 ${hueStart}) 0%, transparent 70%)`,
@@ -344,7 +344,7 @@ const App = () => {
                       key={item.id}
                       onClick={() => setActiveSlide(index)}
                       className={`
-                        px-3 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium
+                        px-3 md:px-6 py-1.5 md:py-2  text-xs md:text-sm font-medium
                         transition-all duration-300 cursor-pointer
                         ${activeSlide === index
                           ? 'bg-white dark:bg-gray-900 text-black dark:text-white shadow-lg scale-105'
@@ -371,7 +371,8 @@ const App = () => {
                       `}
                       style={{ zIndex: activeSlide === index ? 10 : 0 }}
                     >
-                      <div className="relative w-full h-full overflow-hidden group p-6 bg-white/2 backdrop-blur-sm">
+                      <div className="relative w-full h-full overflow-hidden group p-6  border border-white/10 backdrop-blur-sm">
+                      {/* <div className="relative w-full h-full overflow-hidden group p-6  border border-white/10 rounded-2xl bg-black/70 backdrop-blur-sm"> */}
                         {/* <div className="relative w-full h-full overflow-hidden group border border-white/10 p-6 bg-white/2 backdrop-blur-sm rounded-2xl"> */}
                         {/* <div className="relative w-full h-full rounded-2xl overflow-hidden group border border-white/10 p-6"> */}
                         <img
@@ -396,7 +397,7 @@ const App = () => {
                             <div className="flex gap-3 md:gap-4 ">
                               <button
                                 onClick={() => handleRunAs(item)}
-                                className="flex group items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-white/90 hover:translate-x-1 transition-all"
+                                className="flex group items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-white text-black  text-sm font-medium hover:bg-white/90 hover:translate-x-1 transition-all"
                               >
                                 Run as
                                 <FaPlay className="transition-transform group-hover:translate-x-1" />
@@ -423,7 +424,7 @@ const App = () => {
                   {workExperiences.map((exp, index) => (
                     <div
                       key={exp.id}
-                      className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover"
+                      className="group relative bg-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <div className="text-5xl mb-4">{exp.logo}</div>
@@ -477,7 +478,7 @@ const App = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
                   {Object.entries(skills).map(([category, items], index) => (
                     <div
-                      className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover"
+                      className="group relative bg-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover"
                       style={{ animationDelay: `${index * 0.1}s` }}
                       key={category}
                     >
@@ -535,7 +536,7 @@ const App = () => {
       {/* Modal Projet */}
       {isModalOpen && selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
-          <div className="relative w-full max-w-lg bg-[#111] text-white rounded-2xl p-6 border border-white/10 animate-scale-up">
+          <div className="relative w-full max-w-lg bg-[#111] text-white p-6 border border-white/10 animate-scale-up">
 
             {/* Bouton fermer */}
             <button
@@ -546,7 +547,7 @@ const App = () => {
             </button>
 
             <div className="space-y-4">
-              <img src={notFoundImage} alt="" className='rounded-2xl' />
+              <img src={notFoundImage} alt="" className='' />
 
               <h3 className="text-2xl font-bold">
                 {selectedProject.title}
@@ -561,7 +562,7 @@ const App = () => {
                   {selectedProject.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs rounded-full bg-white/10 border border-white/10"
+                      className="px-3 py-1 text-xs  bg-white/10 border border-white/10"
                     >
                       {tech}
                     </span>
@@ -572,7 +573,7 @@ const App = () => {
               <div className="pt-4">
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="px-5 py-2 rounded-full bg-white text-black hover:bg-white/90 transition"
+                  className="px-5 py-2  bg-white text-black hover:bg-white/90 transition"
                 >
                   Fermer
                 </button>

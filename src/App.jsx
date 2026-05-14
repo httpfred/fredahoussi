@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { skills, workExperiences, scrollWords, portfolioItems, socials } from './utils/constants';
 import { Analytics } from '@vercel/analytics/react';
+import { techIcons } from './utils/techIcons';
 
 import me from './assets/img/me/fred.png';
-import { FaPlay } from 'react-icons/fa';
+import { FaCheckSquare, FaPlay } from 'react-icons/fa';
 import notFoundImage from './assets/img/icon/not-found.gif';
+import { FaCheck } from 'react-icons/fa6';
 // import me from './assets/img/me/fred-full.png';
 
 // Composant Typewriter pour effet machine à écrire
@@ -127,6 +129,8 @@ const App = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const [openStackId, setOpenStackId] = useState(null);
 
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -424,10 +428,10 @@ const App = () => {
                   {workExperiences.map((exp, index) => (
                     <div
                       key={exp.id}
-                      className="group relative bg-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover"
+                      className="group relative bg-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 card-hover overflow-hidden"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                      <div className="text-5xl mb-4">{exp.logo}</div>
+                      <div className="text-2xl mb-4">{exp.logo}</div>
                       <h3 className="text-xl font-bold text-white mb-1">{exp.company}</h3>
                       <p className="text-sm text-white/60 mb-2"> <span className='px-2 border border-white/10 bg-white/10 text-black'>{exp.grade}</span> <span>{exp.position}</span></p>
                       <p className="text-xs text-white/40 mb-4">{exp.period}</p>
@@ -440,6 +444,63 @@ const App = () => {
                           </li>
                         ))}
                       </ul>
+                      {/* STACK BUTTON */}
+                      <div className="absolute bottom-4 right-4 z-20">
+                        <button
+                          onClick={() =>
+                            setOpenStackId(openStackId === exp.id ? null : exp.id)
+                          }
+                          className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5 backdrop-blur-sm text-white text-sm hover:bg-white hover:text-black transition-all duration-300"
+                        >
+                          Stacks
+                          <FaCheck />
+                        </button>
+                      </div>
+
+                      {/* STACK PANEL */}
+                      <div
+                        className={`
+                          absolute left-0 right-0 top-0
+                          bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 backdrop-blur-md border-b border-white/10
+                          overflow-hidden
+                          transition-all duration-500 ease-out
+                          z-10
+
+                          ${openStackId === exp.id
+                            ? "opacity-100 animate-drop-in"
+                            : "-translate-y-full opacity-0 pointer-events-none"
+                          }
+                        `}
+                      >
+                        <div className="p-5">
+                          <div className="flex flex-wrap gap-2">
+                            {exp.stacks.map((stack, i) => (
+                              <div
+                                key={i}
+                                className="
+                                    flex items-center gap-2
+                                    px-3 py-2
+                                    text-xs
+                                    bg-white/10
+                                    border border-white/10
+                                    text-white
+                                    backdrop-blur-sm
+                                    hover:bg-white/20
+                                    transition-all duration-300
+                                  "
+                              >
+                                <span className="text-sm">
+                                  {techIcons[stack] || <FaCheck />}
+                                </span>
+
+                                <span>
+                                  {stack}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -470,7 +531,7 @@ const App = () => {
                         <div className="text-3xl md:text-4xl font-bold text-white dark:text-black">
                           {stat.number}
                         </div>
-                        <div className="text-sm opacity-60 text-white dark:text-black">{stat.label}</div>
+                        <div className="about-me_label text-sm opacity-60 text-white dark:text-black">{stat.label}</div>
                       </div>
                     ))}
                   </div>
@@ -485,7 +546,17 @@ const App = () => {
                       <h4 className="text-lg font-medium  mb-4 capitalize text-white dark:text-white">{category}</h4>
                       <ul className="space-y-2">
                         {items.map(skill => (
-                          <li key={skill} className="text-sm opacity-70 py-1 border-b border-gray-400 dark:border-gray-600 text-white dark:text-white">
+                          // <li key={skill} className="text-sm opacity-70 py-1 border-b border-gray-400 dark:border-gray-600 text-white dark:text-white">
+                          //   {skill}
+                          // </li>
+                          <li
+                            key={skill}
+                            className="flex items-center gap-2 text-sm opacity-70 py-1 border-b border-gray-400 dark:border-gray-600 text-white dark:text-white"
+                          >
+                            <span className="text-lg">
+                              {techIcons[skill] || <FaCheck />}
+                            </span>
+
                             {skill}
                           </li>
                         ))}
@@ -560,10 +631,17 @@ const App = () => {
               {selectedProject.technologies && (
                 <div className="flex flex-wrap gap-2 pt-2">
                   {selectedProject.technologies.map((tech, index) => (
+                    // <span
+                    //   key={index}
+                    //   className="px-3 py-1 text-xs  bg-white/10 border border-white/10"
+                    // >
+                    //   {tech}
+                    // </span>
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs  bg-white/10 border border-white/10"
+                      className="flex items-center gap-2 px-3 py-1 text-xs bg-white/10 border border-white/10"
                     >
+                      {techIcons[tech] || <FaCheck />}
                       {tech}
                     </span>
                   ))}

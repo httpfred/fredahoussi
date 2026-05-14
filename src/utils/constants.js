@@ -2,12 +2,14 @@
 import projet1 from '../assets/img/work/unikdress.png';
 import projet2 from '../assets/img/work/oriplat.png';
 import projet3 from '../assets/img/work/agricopay.png';
+import projet4 from '../assets/img/work/uligpro.png';
 
 // Ou import groupé
 export const images = {
     projet1: require('../assets/img/work/unikdress.png'),
     projet2: require('../assets/img/work/oriplat.png'),
     projet3: require('../assets/img/work/agricopay.png'),
+    projet4: require('../assets/img/work/uligpro.png'),
 };
 
 // Portfolio content
@@ -43,6 +45,17 @@ export const portfolioItems = [
         url: "",
         technologies: ["Flutter", "Laravel", "SQLite"]
     },
+    {
+        id: 4,
+        title: 'Uligpro Web App',
+        // title: 'Mobile Application Suite',
+        category: 'Soccer / Web App',
+        image: projet4,
+        description: 'Develop a solution for     selling tickets to     sporting events     and purchasing jerseys.',
+        tags: ['Vue.js', 'Laravel'],
+        url: "",
+        technologies: ["Vue.js", "Laravel", "MySQL"]
+    },
 ];
 
 // Scroll words with associated illustrations
@@ -76,7 +89,13 @@ export const workExperiences = [
             'Analyse et reporting des anomalies détectées',
             'Collaboration avec les équipes techniques pour la validation des fonctionnalités'
         ],
-        logo: '..'
+        stacks: [
+            'React.js',
+            'Vue.js',
+            'Postman',
+            'Git (GitHub)',
+        ],
+        logo: '>_'
     },
     {
         id: 2,
@@ -88,7 +107,13 @@ export const workExperiences = [
         achievements: [
             'Conception et maintenance d’applications web',
         ],
-        logo: '..'
+        stacks: [
+            'React.js',
+            'PHP',
+            'MySQL',
+            'Git (GitHub)',
+        ],
+        logo: '>_'
     },
     {
         id: 3,
@@ -102,7 +127,13 @@ export const workExperiences = [
             'Mise sur pied d’une identité visuelle',
             'Mise en production des applications'
         ],
-        logo: '..'
+        stacks: [
+            'Laravel',
+            'MySQL',
+            'Bootstrap',
+            'Javascript',
+        ],
+        logo: '>_'
     },
     {
         id: 4,
@@ -114,7 +145,14 @@ export const workExperiences = [
         achievements: [
             'Conception et maintenance d`\’applications web et mobile',
         ],
-        logo: '..'
+        stacks: [
+            'C#',
+            'SQL Server',
+            'Flutter',
+            'Bootstrap',
+            'Javascript',
+        ],
+        logo: '>_'
     },
     {
         id: 5,
@@ -128,7 +166,14 @@ export const workExperiences = [
             'Mise sur pied d’une identité visuelle',
             'Mise en production des applications'
         ],
-        logo: '..'
+        stacks: [
+            'Wordpress',
+            'PHP',
+            'Javascript',
+            'Photoshop',
+            'Canva',
+        ],
+        logo: '>_'
     }
 ];
 
@@ -139,7 +184,7 @@ export const skills = {
     MOBILE: ['React Native', 'Flutter'],
     CMS: ['Wordpress'],
     'VERSIONING & CI/CD': ['Git (GitHub)', 'Docker', 'GitHub Actions'],
-    DESIGN: ['Figma', 'Canvas', 'Photoshop', 'Adobe Illustrator', 'Premiere Pro'],
+    DESIGN: ['Figma', 'Canva', 'Photoshop', 'Adobe Illustrator', 'Premiere Pro'],
     'APIs / TESTING TOOLS': ['Postman'],
     'MANAGEMENT METHODS': ['Agile', 'Scrum', 'UML']
 };

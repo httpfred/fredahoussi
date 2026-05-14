@@ -340,12 +340,23 @@ body.light .bg-grid-pattern {
 
 /* Animation pour les titres de section */
 
+h1 {
+  font-family: 'monospace', monospace;
+}
+
 h2 {
+  font-family: 'monospace', monospace;
   /* position: relative; */
   display: block;
   /* display: inline-block; */
   /* width: 100%; */
   /* text-align: center; */
+}
+
+.about-me_label {
+  font-family: 'monospace', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 /* h2::after {
@@ -491,4 +502,26 @@ h2 {
 .animate-scroll-dot-3 {
   animation: scrollDot 1.5s ease-in-out infinite;
   animation-delay: 0.6s;
+}
+
+
+/* Card stack */
+@keyframes dropIn {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-drop-in {
+  animation: dropIn 0.5s ease-out;
 }

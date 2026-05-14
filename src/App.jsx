@@ -857,7 +857,7 @@ const App = () => {
 
       {/* Modal Projet */}
       {isModalOpen && selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+        <div className="fixed inset-0  z-[999] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
           <div className="relative w-full max-w-lg bg-[#111] text-white p-6 border border-white/10 animate-scale-up">
 
             {/* Bouton fermer */}

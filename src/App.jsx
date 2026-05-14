@@ -501,7 +501,7 @@ const App = () => {
                       style={{ zIndex: activeSlide === index ? 10 : 0 }}
                     >
                       <div className="relative w-full h-full overflow-hidden group p-6  border border-white/10 backdrop-blur-sm">
-                      {/* <div
+                        {/* <div
                         className=" relative w-full h-full overflow-hidden group p-6 bg-white/[0.03] backdrop-blur-sm
                           border border-dashed border-white/15
                           hover:border-cyan-400/40
@@ -525,8 +525,11 @@ const App = () => {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className={` w-full h-full object-contain transition-all duration-[10s] ease-out
-                            group-hover:scale-110 group-hover:rotate-[1deg]
+                          // className={` w-full h-full object-contain transition-all duration-[10s] ease-out
+                          //   group-hover:scale-110 group-hover:rotate-[1deg]
+                          //   ${activeSlide === index ? 'scale-105' : 'scale-100'}
+                          // `}
+                          className={` w-full h-full object-contain
                             ${activeSlide === index ? 'scale-105' : 'scale-100'}
                           `}
                         // className={`

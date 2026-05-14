@@ -178,15 +178,15 @@ export const workExperiences = [
 ];
 
 export const skills = {
-    FRONTEND: ['Javascript', 'React.js', 'Vue.js', 'Angular', 'Java', 'TypeScript', 'Jquery', 'Flask', 'Tailwind CSS', 'Bootstrap'],
+    FRONTEND: ['Javascript', 'React.js', 'Vue.js', 'Angular', 'TypeScript', 'Jquery', 'Flask', 'Tailwind CSS', 'Bootstrap'],
     BACKEND: ['Node.js', 'Laravel', 'Spring Boot', 'Firebase'],
     DATABASE: ['MySQL', 'SQLite', 'NoSQL'],
     MOBILE: ['React Native', 'Flutter'],
     CMS: ['Wordpress'],
-    'VERSIONING & CI/CD': ['Git (GitHub)', 'Docker', 'GitHub Actions'],
+    // 'VERSIONING & CI/CD': ['Git (GitHub)', 'Docker', 'GitHub Actions'],
     DESIGN: ['Figma', 'Canva', 'Photoshop', 'Adobe Illustrator', 'Premiere Pro'],
-    'APIs / TESTING TOOLS': ['Postman'],
-    'MANAGEMENT METHODS': ['Agile', 'Scrum', 'UML']
+    // 'APIs / TESTING TOOLS': ['Postman'],
+    // 'MANAGEMENT METHODS': ['Agile', 'Scrum', 'UML']
 };
 
 export const socials = [

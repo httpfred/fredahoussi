@@ -346,6 +346,7 @@ h1 {
 
 h2 {
   font-family: 'monospace', monospace;
+  text-transform: uppercase;
   /* position: relative; */
   display: block;
   /* display: inline-block; */
